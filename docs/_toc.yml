@@ -1,0 +1,8 @@
+- title: Página Inicial
+  url: /
+
+- title: Gestão de Funcionários
+  url: /funcionarios/
+  children:
+    - title: Visão Geral
+      url: /funcionarios/

@@ -21,13 +21,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+          working-directory: ./docs  # Foco na pasta docs
+
+      - name: Install Dependencies
+        run: bundle install
+        working-directory: ./docs
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs  # Alterado para a pasta docs
+          source: ./docs
           destination: ./_site
 
       - name: Upload artifact

@@ -1,0 +1,13 @@
+# ADR-FUN-1 - Integração sincrona com o keycloak
+
+**Decisão**:
+Para criação dos funcionários como usuários no Keycloak ou atualização do perfil do usuário, a chamada a api do keycloak será sincrona,
+pois as funcionalidades que impactam estão disponéveis apenas no frontend e não são em massa (bulk), tendo um feedback de erro (caso houver) mais rápido,
+e não impactando nas filas assincronas
+
+
+**Impacto**:  
+- Frontend: Maior tempo de resposta do endpoint de alteração de perfil
+
+**Links Relacionados**:  
+- [RN-FUN-2](/docs/funcionarios/alto_nivel.md): Regra de negócio.

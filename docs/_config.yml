@@ -1,16 +1,11 @@
-title: Documentação do Sistema
-theme: just-the-docs
-url: "https://multpex.github.io/docs"  # URL do GitHub Pages
-
+remote_theme: just-the-docs/just-the-docs
 plugins:
+  - jekyll-remote-theme
   - jekyll-relative-links
 
-relative_links:
-  enabled: true
-  collections: true
-
+# Opcional: Configurações extras do tema
+theme: just-the-docs
 collections:
   adr:
     output: true
     permalink: /:path/
-    
